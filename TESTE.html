@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lorem Ipsum?</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        #botoes {
+            display: flex;
+            gap: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: 2px solid #333;
+            border-radius: 5px;
+            background-color: #fff;
+        }
+        #nao {
+            position: relative;
+        }
+        #mensagem {
+            margin-top: 20px;
+            font-size: 24px;
+            color: #28a745;
+            display: none;
+            animation: bounce 0.5s ease;
+        }
+        @keyframes bounce {
+            0% { transform: translateY(-10px); }
+            50% { transform: translateY(10px); }
+            100% { transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>GABRIEL QUER NAMORAR CMG?</h1>
+
+    <div id="botoes">
+        <button id="sim">Sim</button>
+        <button id="nao">Não</button>
+    </div>
+
+    <div id="mensagem">AUEEEBBAAAAA MUAAH!</div>
+
+    <script>
+        // Evento para o botão "Sim"
+        document.getElementById('sim').addEventListener('click', function() {
+            document.getElementById('mensagem').style.display = 'block'; 
+        });
+
+        // Evento para o botão "Não"
+        document.getElementById('nao').addEventListener('mouseover', function() {
+            var button = document.getElementById('nao');
+            var maxX = window.innerWidth - button.offsetWidth;
+            var maxY = window.innerHeight - button.offsetHeight;
+
+            var randomX = Math.floor(Math.random() * maxX);
+            var randomY = Math.floor(Math.random() * maxY);
+
+            button.style.position = "absolute";
+            button.style.left = randomX + "px";
+            button.style.top = randomY + "px";
+        });
+    </script>
+
+</body>
+</html>
